@@ -1,0 +1,23 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: prob_wins
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Ivo
+    family-names: Verhoeven
+    email: ioverho@maibox.org
+    affiliation: University of Amsterdam
+    orcid: 'https://orcid.org/0000-0002-5163-210X'
+repository-code: 'https://github.com/ioverho/prob_wins'
+abstract: >-
+  Statistical inference and testing for win rates.
+keywords:
+  - win rates
+  - statistics
+  - probabilistic
+license: MIT
