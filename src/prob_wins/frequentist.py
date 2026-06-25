@@ -15,6 +15,7 @@ from prob_wins.utils.outcome_counter import (
     results_to_comparison_outcomes,
 )
 from prob_wins.utils.score_intervals import get_score_interval_func
+from prob_wins.utils.validation import validate_results
 
 
 @dataclasses.dataclass(frozen=True)
@@ -94,6 +95,8 @@ def compare_paired_win_rates_frequentist(
         FrequentistComparisonResult: Dataclass containing point estimates, confidence intervals,
             and sign-test p-values for the comparison.
     """
+    results, baseline_results = validate_results(results, baseline_results)
+
     # Convert a confidence level to a standard Normal critical value
     critical_value = confidence_to_critical_value(confidence_level)
 

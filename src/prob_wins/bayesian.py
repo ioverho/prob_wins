@@ -11,6 +11,7 @@ from prob_wins.utils.outcome_counter import (
     results_to_comparison_outcomes,
 )
 from prob_wins.utils.summary import summarize_posterior
+from prob_wins.utils.validation import validate_results
 
 
 @dataclasses.dataclass(frozen=True)
@@ -114,6 +115,8 @@ def compare_paired_win_rates_frequentist(
         BayesianComparisonResult: Dataclass containing posterior medians, HDIs, and
             ROPE-based significance probabilities for the comparison.
     """
+    results, baseline_results = validate_results(results, baseline_results)
+
     # Convert results to comparison outcomes
     outcomes: ComparisonOutcomes = results_to_comparison_outcomes(
         left_results=results,
