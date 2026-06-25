@@ -104,9 +104,9 @@ def compare_paired_win_rates_frequentist(
     )
 
     # Compute the win, loss and tie probabilities
-    prob_win = outcomes.num_wins / outcomes.num_samples
-    prob_loss = outcomes.num_losses / outcomes.num_samples
-    prob_tie = outcomes.num_ties / outcomes.num_samples
+    prob_win = outcomes.num_wins / outcomes.num_results
+    prob_loss = outcomes.num_losses / outcomes.num_results
+    prob_tie = outcomes.num_ties / outcomes.num_results
 
     # Get score interval function
     score_interval_func = get_score_interval_func(score_interval_method)
@@ -114,19 +114,19 @@ def compare_paired_win_rates_frequentist(
     # Compute score intervals for the probability estimates
     prob_win_ci = score_interval_func(
         prob_win,
-        outcomes.num_samples,
+        outcomes.num_results,
         z=critical_value,
     )
 
     prob_loss_ci = score_interval_func(
         prob_loss,
-        outcomes.num_samples,
+        outcomes.num_results,
         z=critical_value,
     )
 
     prob_tie_ci = score_interval_func(
         prob_tie,
-        outcomes.num_samples,
+        outcomes.num_results,
         z=critical_value,
     )
 

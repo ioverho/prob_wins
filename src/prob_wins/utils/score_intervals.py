@@ -1,4 +1,4 @@
-import math
+import numpy as np
 
 from prob_wins.utils.confidence_intervals import ConfidenceInterval
 
@@ -33,7 +33,7 @@ def wilson_score_interval(p: float, n: int, z: float = 1.96) -> tuple[float, flo
     """
     denominator = 1 + z**2 / n
     centre_adjusted_probability = p + z * z / (2 * n)
-    adjusted_standard_deviation = math.sqrt((p * (1 - p) + z * z / (4 * n)) / n)
+    adjusted_standard_deviation = np.sqrt((p * (1 - p) + z * z / (4 * n)) / n)
 
     ub = (centre_adjusted_probability + z * adjusted_standard_deviation) / denominator
 
@@ -61,7 +61,7 @@ def agresti_coull_score_interval(
 
     p_adj = (p * n + 0.5 * z2) / n_adj
 
-    delta = z * math.sqrt(p_adj / n_adj * (1 - p_adj))
+    delta = z * np.sqrt(p_adj / n_adj * (1 - p_adj))
 
     lb = p_adj - delta
     ub = p_adj + delta

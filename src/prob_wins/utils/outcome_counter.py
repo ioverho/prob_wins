@@ -30,7 +30,7 @@ def results_to_comparison_outcomes(
         np.stack([left_results, right_results], axis=1), return_counts=True, axis=0
     )
 
-    num_results = outcomes.shape[0]
+    num_results = counts.sum()
 
     wins = 0
     losses = 0
