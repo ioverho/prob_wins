@@ -65,7 +65,7 @@ class FrequentistComparisonResult:
     test_p_val_two_sided: float
 
 
-def compare_paired_win_rates(
+def compare_paired_win_rates_frequentist(
     results: jtyping.Float[np.ndarray, "num_results"],  # noqa: F821
     baseline_results: jtyping.Float[np.ndarray, "num_results"],  # noqa: F821
     confidence_level: float = 0.95,

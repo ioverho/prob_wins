@@ -1,2 +1,1 @@
-def hello() -> str:
-    return "Hello from prob-wins!"
+from .frequentist import compare_paired_win_rates_frequentist
