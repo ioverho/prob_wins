@@ -1,7 +1,7 @@
 [project]
 name = "prob-wins"
 version = "0.1.0"
-description = "Add your description here"
+description = "Pairwise statistical comparison of results using win rates."
 readme = "README.md"
 authors = [{ name = "ioverho", email = "ioverho@mailbox.org" }]
 requires-python = ">=3.11"

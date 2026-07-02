@@ -80,6 +80,8 @@ Let's say you have some evaluation results from your model, `eval_results_model`
 
 A more detailed explanation and derivation of the various win rate statistics and testing is provided in an [accompanying blog post](https://www.ivoverhoeven.nl/blog/).
 
+Check out the [`./analysis/`](./analysis/) folder for some examples.
+
 ### Frequentist
 
 Running the `prob_wins.compare_paired_win_rates_frequentist` method will return a `FrequentistComparisonResult` object that contains all necessary statistics for assessing your win rates *in a Frequentist framework*.
