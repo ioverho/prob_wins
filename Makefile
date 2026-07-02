@@ -7,7 +7,7 @@ help:  ## Display this help
 
 .PHONY: hello-world
 hello-world: ## Tests uv and make
-	@uv run python -c "import prob_conf_mat; print('Hello World!')"
+	@uv run python -c "import prob_wins; print('Hello World!')"
 
 .PHONY: clean
 clean:  ## Clean up caches and build artifacts
@@ -52,7 +52,7 @@ coverage: ## Checks test coverage
 
 .PHONY: lint
 lint: ## Run linting
-	@uv run --dev ruff check ./src/prob_conf_mat --fix
+	@uv run --dev ruff check ./src/prob_wins --fix
 
 .PHONY: type
 type: ## Run static typechecking

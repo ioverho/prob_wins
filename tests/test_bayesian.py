@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from prob_wins.bayesian import BayesianComparisonResult, compare_paired_win_rates_frequentist
+from prob_wins.bayesian import BayesianComparisonResult, compare_paired_win_rates_bayesian
 
 
 # ---------------------------------------------------------------------------
@@ -9,7 +9,7 @@ from prob_wins.bayesian import BayesianComparisonResult, compare_paired_win_rate
 # ---------------------------------------------------------------------------
 
 def run(left, right, seed=0, **kwargs):
-    return compare_paired_win_rates_frequentist(
+    return compare_paired_win_rates_bayesian(
         results=np.array(left, dtype=float),
         baseline_results=np.array(right, dtype=float),
         seed=seed,
