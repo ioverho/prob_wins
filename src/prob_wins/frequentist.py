@@ -1,4 +1,6 @@
 # Code written by me, documentation written with Claude
+from __future__ import annotations
+
 import dataclasses
 
 import jaxtyping as jtyping

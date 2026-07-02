@@ -149,6 +149,6 @@ The ROPE is the region of practical equivalence, wherein the difference between 
     author = {Verhoeven, Ivo},
     license = {MIT},
     title = {{prob\_wins}},
-    url = {https://github.com/ioverho/prob-wins}
+    url = {https://github.com/ioverho/prob_wins}
 }
 ```
