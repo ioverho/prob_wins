@@ -10,7 +10,7 @@ type: software
 authors:
   - given-names: Ivo
     family-names: Verhoeven
-    email: ioverho@maibox.org
+    email: i.o.verhoeven@uva.nl
     affiliation: University of Amsterdam
     orcid: 'https://orcid.org/0000-0002-5163-210X'
 repository-code: 'https://github.com/ioverho/prob_wins'
