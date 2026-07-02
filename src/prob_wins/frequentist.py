@@ -220,11 +220,9 @@ def compare_paired_win_rates_frequentist(
         outcomes.num_wins + outcomes.num_losses
     )
 
-    test_p_val_one_sided = scipy.stats.norm.cdf(
-        test_statistic if test_statistic < 0 else -test_statistic
-    )
+    test_p_val_one_sided = scipy.stats.norm.cdf(-test_statistic)
 
-    test_p_val_two_sided = 2 * test_p_val_one_sided
+    test_p_val_two_sided = 2 * scipy.stats.norm.cdf(-np.abs(test_statistic))
 
     result = FrequentistComparisonResult(
         outcomes=outcomes,

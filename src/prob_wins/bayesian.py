@@ -74,7 +74,7 @@ class BayesianComparisonResult:
     p_sig_bidirectional: float
 
 
-def compare_paired_win_rates_frequentist(
+def compare_paired_win_rates_bayesian(
     results: jtyping.Float[np.ndarray, "num_results"],  # noqa: F821
     baseline_results: jtyping.Float[np.ndarray, "num_results"],  # noqa: F821
     seed: int,
@@ -124,7 +124,7 @@ def compare_paired_win_rates_frequentist(
     )
 
     # Fetch a prior for the Dirichlet distribution
-    prior = dirichlet_prior(strategy=prior_strategy, shape=3)
+    prior = dirichlet_prior(strategy=prior_strategy, shape=(3,))
 
     # Construct likelihood
     observed = np.array([outcomes.num_wins, outcomes.num_losses, outcomes.num_ties])
@@ -173,16 +173,16 @@ def compare_paired_win_rates_frequentist(
     # Compute test statistic ROPE
     # Define a default ROPE
     if min_sig_diff is None:
-        min_sig_diff: float = 0.1 * np.std(test_statistic_summary)  # pyright: ignore[reportAssignmentType]
+        min_sig_diff: float = 0.1 * np.std(test_statistic)  # pyright: ignore[reportAssignmentType]
 
     # Count the number of instances within each bin
     # Significantly negative, within ROPE, significantly positive
     counts, _ = np.histogram(
-        test_statistic_summary,
+        test_statistic,
         bins=[-float("inf"), -min_sig_diff, min_sig_diff + 1e-8, float("inf")],
     )
 
-    p_sig_neg, p_rope, p_sig_pos = counts / test_statistic_summary.shape[0]
+    p_sig_neg, p_rope, p_sig_pos = counts / test_statistic.shape[0]
 
     p_sig_bidirectional = 1 - p_rope
 

@@ -1,1 +1,2 @@
 from .frequentist import compare_paired_win_rates_frequentist
+from .bayesian import compare_paired_win_rates_bayesian
